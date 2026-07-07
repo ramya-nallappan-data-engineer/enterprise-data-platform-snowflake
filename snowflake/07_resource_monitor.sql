@@ -1,0 +1,19 @@
+/*
+========================================================
+Resource Monitor
+========================================================
+*/
+
+CREATE RESOURCE MONITOR IF NOT EXISTS RM_ENTERPRISE_PLATFORM
+WITH
+    CREDIT_QUOTA = 1000
+    FREQUENCY = MONTHLY
+    START_TIMESTAMP = IMMEDIATELY
+
+TRIGGERS
+
+ON 75 PERCENT DO NOTIFY
+
+ON 90 PERCENT DO NOTIFY
+
+ON 100 PERCENT DO SUSPEND;

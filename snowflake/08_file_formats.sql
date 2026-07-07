@@ -1,0 +1,19 @@
+/*
+========================================================
+File Formats
+========================================================
+*/
+
+USE DATABASE ENTERPRISE_DW;
+
+CREATE FILE FORMAT IF NOT EXISTS CSV_FORMAT
+TYPE=CSV
+FIELD_DELIMITER=','
+SKIP_HEADER=1
+FIELD_OPTIONALLY_ENCLOSED_BY='"';
+
+CREATE FILE FORMAT IF NOT EXISTS JSON_FORMAT
+TYPE=JSON;
+
+CREATE FILE FORMAT IF NOT EXISTS PARQUET_FORMAT
+TYPE=PARQUET;
