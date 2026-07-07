@@ -1,0 +1,7 @@
+-- Check 1 — Invalid Review Score
+
+SELECT
+*
+FROM REVIEW_SILVER
+
+WHERE REVIEW_SCORE NOT BETWEEN 1 AND 5;

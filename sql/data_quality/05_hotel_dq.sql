@@ -1,0 +1,8 @@
+-- Check 1 — Invalid Rating
+
+SELECT
+*
+
+FROM HOTEL_SILVER
+
+STAR_RATING NOT BETWEEN 1 AND 5;

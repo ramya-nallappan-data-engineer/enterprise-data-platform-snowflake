@@ -1,0 +1,23 @@
+-- Check 1 - Invalid Payment Amount
+
+SELECT *
+
+FROM PAYMENT_SILVER
+
+WHERE PAYMENT_AMOUNT < 0;
+
+-- Check 2 — Payment is Null
+
+SELECT *
+
+FROM PAYMENT_SILVER
+
+WHERE PAYMENT_STATUS IS NULL;
+
+-- Check 3 - Invalid Payment mode
+
+SELECT *
+
+FROM PAYMENT_SILVER
+
+WHERE PAYMENT_MODE IS NULL;

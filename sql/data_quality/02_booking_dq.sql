@@ -1,0 +1,24 @@
+-- Check 1 - Invalid Booking
+
+SELECT *
+
+FROM BOOKING_SILVER
+
+WHERE TOTAL_AMOUNT < 0;
+
+-- Check 2 — CHECKIN Date greater than CHECKOUT Date
+
+SELECT *
+
+FROM BOOKING_SILVER
+
+WHERE CHECKIN_DATE > CHECKOUT_DATE;
+
+-- Check 3 - Booking status is Neither Confirmed Nor Cancelled
+
+SELECT *
+
+FROM BOOKING_SILVER
+
+WHERE BOOKING_STATUS NOT IN
+('CONFIRMED','CANCELLED');
