@@ -1,0 +1,59 @@
+USE DATABASE TRAVEL_DW;
+USE SCHEMA GOLD;
+
+CREATE OR REPLACE PROCEDURE SP_LOAD_DIM_CUSTOMER()
+RETURNS STRING
+LANGUAGE SQL
+EXECUTE AS OWNER
+AS
+$$
+BEGIN
+
+    MERGE INTO DIM_CUSTOMER T
+
+    USING SILVER.CUSTOMER_SILVER S
+
+    ON T.CUSTOMER_ID = S.CUSTOMER_ID
+
+    WHEN MATCHED THEN
+    UPDATE SET
+        T.FIRST_NAME      = S.FIRST_NAME,
+        T.LAST_NAME       = S.LAST_NAME,
+        T.EMAIL           = S.EMAIL,
+        T.PHONE           = S.PHONE,
+        T.COUNTRY         = S.COUNTRY,
+        T.EFFECTIVE_TO    = '9999-12-31',
+        T.IS_CURRENT      = TRUE
+
+    WHEN NOT MATCHED THEN
+
+    INSERT
+    (
+        CUSTOMER_ID,
+        FIRST_NAME,
+        LAST_NAME,
+        EMAIL,
+        PHONE,
+        COUNTRY,
+        EFFECTIVE_FROM,
+        EFFECTIVE_TO,
+        IS_CURRENT
+    )
+
+    VALUES
+    (
+        S.CUSTOMER_ID,
+        S.FIRST_NAME,
+        S.LAST_NAME,
+        S.EMAIL,
+        S.PHONE,
+        S.COUNTRY,
+        CURRENT_DATE,
+        '9999-12-31',
+        TRUE
+    );
+
+    RETURN 'DIM_CUSTOMER loaded successfully';
+
+END;
+$$;
