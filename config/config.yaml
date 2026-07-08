@@ -1,0 +1,21 @@
+snowflake:
+
+  account: YOUR_ACCOUNT
+
+  user: YOUR_USERNAME
+
+  password: YOUR_PASSWORD
+
+  warehouse: COMPUTE_WH
+
+  database: TRAVEL_DW
+
+  schema: GOLD
+
+logging:
+
+  log_level: INFO
+
+pipeline:
+
+  master_procedure: SP_MASTER_PIPELINE

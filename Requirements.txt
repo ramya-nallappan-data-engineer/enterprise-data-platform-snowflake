@@ -1,0 +1,5 @@
+snowflake-connector-python
+
+pyyaml
+
+pandas
