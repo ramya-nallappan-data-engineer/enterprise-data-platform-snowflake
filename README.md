@@ -43,3 +43,17 @@ images/
 ⬜ ELT Pipelines
 ⬜ Data Quality Framework
 ⬜ Documentation
+
+## Enterprise Snowflake Features
+
+✔ Change Data Capture using Snowflake Streams
+
+✔ MERGE-based Incremental Loading
+
+✔ Slowly Changing Dimension Type 2
+
+✔ Audit Framework
+
+✔ Data Quality Framework
+
+✔ Enterprise Data Warehouse Design
