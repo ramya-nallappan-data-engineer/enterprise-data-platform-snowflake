@@ -2,7 +2,7 @@ import os
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 
-DATA_FOLDER = os.path.join(PROJECT_ROOT, "sample_data")
+DATA_FOLDER = os.path.join(PROJECT_ROOT, "data", "sample_data")
 
 CUSTOMER_FILE = os.path.join(DATA_FOLDER, "customers.csv")
 HOTEL_FILE = os.path.join(DATA_FOLDER, "hotels.csv")
